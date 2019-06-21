@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="2.0">
+    <persistence-unit name="PMS_Start"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>com.company.pmsstart.entity.Prisonersrelease</class>
+        <class>com.company.pmsstart.entity.Visitorsinformation</class>
+        <class>com.company.pmsstart.entity.Prisonerdetails</class>
+        <class>com.company.pmsstart.entity.Nextofkin</class>
+        <class>com.company.pmsstart.entity.Prisonerproperty</class>
+        <class>com.company.pmsstart.entity.Medicalinformation</class>
+        <class>com.company.pmsstart.entity.Cells</class>
+        <class>com.company.pmsstart.entity.Foreignaddress</class>
+        <class>com.company.pmsstart.entity.Sentencedetails</class>
+    </persistence-unit>
+</persistence>
