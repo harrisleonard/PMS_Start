@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
-    <menu id="application-pmsstart" insertBefore="administration">
+    <menu id="application-pmsstart"
+          insertBefore="administration">
+        <item screen="pmsstart$Cells.browse"/>
+        <item screen="pmsstart$Foreignaddress.browse"/>
+        <item screen="pmsstart$Medicalinformation.browse"/>
+        <item screen="pmsstart$Nextofkin.browse"/>
+        <item screen="pmsstart$Prisonerdetails.browse"/>
+        <item screen="pmsstart$Prisonerproperty.browse"/>
+        <item screen="pmsstart$Prisonersrelease.browse"/>
+        <item screen="pmsstart$Sentencedetails.browse"/>
+        <item screen="pmsstart$Visitorsinformation.browse"/>
     </menu>
 </menu-config>

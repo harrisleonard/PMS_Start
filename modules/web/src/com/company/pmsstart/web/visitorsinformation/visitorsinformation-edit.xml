@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.pmsstart.web.visitorsinformation.VisitorsinformationEdit"
+        datasource="visitorsinformationDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.pmsstart.web.visitorsinformation">
+    <dsContext>
+        <datasource id="visitorsinformationDs"
+                    class="com.company.pmsstart.entity.Visitorsinformation"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="visitorsinformationDs">
+            <column width="250px">
+                <field property="name"/>
+                <field caption="Telephone Number"
+                       property="telephonenumber"/>
+            </column>
+            <column>
+                <field caption="Reletionship"
+                       property="relationshipwithinmate"/>
+                <field property="address"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.pmsstart.web.prisonerdetails.PrisonerdetailsEdit"
+        datasource="prisonerdetailsDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.pmsstart.web.prisonerdetails">
+    <dsContext>
+        <datasource id="prisonerdetailsDs"
+                    class="com.company.pmsstart.entity.Prisonerdetails"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="prisonerdetailsDs">
+            <column width="250px">
+                <field caption="Full Name"
+                       property="fullname"/>
+                <field property="nationality"/>
+                <field caption="Phone Number"
+                       property="phonenumber"/>
+            </column>
+            <column>
+                <field property="gender"/>
+                <field property="county"/>
+                <field caption="ID Number/Passport Number"
+                       property="idnumber_passportnumber"/>
+            </column>
+            <column>
+                <field caption="Date Of Birth"
+                       property="dateofbirth"/>
+                <field property="constituency"/>
+                <field caption="Employment Type"
+                       property="employmenttype"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

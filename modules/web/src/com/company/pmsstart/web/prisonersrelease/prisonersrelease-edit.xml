@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.pmsstart.web.prisonersrelease.PrisonersreleaseEdit"
+        datasource="prisonersreleaseDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.pmsstart.web.prisonersrelease">
+    <dsContext>
+        <datasource id="prisonersreleaseDs"
+                    class="com.company.pmsstart.entity.Prisonersrelease"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="prisonersreleaseDs">
+            <column width="250px">
+                <field caption="Reason(s) For Release"
+                       property="reasonsforrelease"/>
+            </column>
+            <column>
+                <field caption="Release Date"
+                       property="releasedate"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.pmsstart.web.foreignaddress.ForeignaddressBrowse"
+        focusComponent="foreignaddressesTable"
+        lookupComponent="foreignaddressesTable"
+        messagesPack="com.company.pmsstart.web.foreignaddress">
+    <dsContext>
+        <groupDatasource id="foreignaddressesDs"
+                         class="com.company.pmsstart.entity.Foreignaddress"
+                         view="_local">
+            <query>
+                <![CDATA[select e from pmsstart$Foreignaddress e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="foreignaddressesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="foreignaddressesTable"
+                datasource="foreignaddressesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="foreignaddressesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="country"/>
+                <column id="town"/>
+            </columns>
+            <rows datasource="foreignaddressesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="foreignaddressesTable.create"/>
+                <button id="editBtn"
+                        action="foreignaddressesTable.edit"/>
+                <button id="removeBtn"
+                        action="foreignaddressesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

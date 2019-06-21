@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.pmsstart.web.nextofkin.NextofkinEdit"
+        datasource="nextofkinDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.pmsstart.web.nextofkin">
+    <dsContext>
+        <datasource id="nextofkinDs"
+                    class="com.company.pmsstart.entity.Nextofkin"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="nextofkinDs">
+            <column width="250px">
+                <field caption="Full Name"
+                       property="nextofkinname"/>
+            </column>
+            <column>
+                <field caption="Phone Number"
+                       property="phonenumber"/>
+            </column>
+            <column>
+                <field property="relationship"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

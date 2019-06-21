@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.pmsstart.web.cells.CellsEdit"
+        datasource="cellsDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.pmsstart.web.cells">
+    <dsContext>
+        <datasource id="cellsDs"
+                    class="com.company.pmsstart.entity.Cells"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="cellsDs">
+            <column width="250px">
+                <field property="block"/>
+            </column>
+            <column>
+                <field caption="Cell Number"
+                       property="cellnumber"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

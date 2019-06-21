@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
-
+    <view class="com.company.pmsstart.entity.Cells"
+          extends="_local"
+          name="cells-view"/>
+    <view class="com.company.pmsstart.entity.Foreignaddress"
+          extends="_local"
+          name="foreignaddress-view"/>
+    <view class="com.company.pmsstart.entity.Medicalinformation"
+          extends="_local"
+          name="medicalinformation-view"/>
+    <view class="com.company.pmsstart.entity.Nextofkin"
+          extends="_local"
+          name="nextofkin-view"/>
+    <view class="com.company.pmsstart.entity.Prisonerdetails"
+          extends="_local"
+          name="prisonerdetails-view"/>
+    <view class="com.company.pmsstart.entity.Prisonerproperty"
+          extends="_local"
+          name="prisonerproperty-view"/>
+    <view class="com.company.pmsstart.entity.Prisonersrelease"
+          extends="_local"
+          name="prisonersrelease-view"/>
+    <view class="com.company.pmsstart.entity.Sentencedetails"
+          extends="_local"
+          name="sentencedetails-view"/>
+    <view class="com.company.pmsstart.entity.Visitorsinformation"
+          extends="_local"
+          name="visitorsinformation-view"/>
 </views>

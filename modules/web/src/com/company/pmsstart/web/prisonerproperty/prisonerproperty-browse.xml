@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.pmsstart.web.prisonerproperty.PrisonerpropertyBrowse"
+        focusComponent="prisonerpropertiesTable"
+        lookupComponent="prisonerpropertiesTable"
+        messagesPack="com.company.pmsstart.web.prisonerproperty">
+    <dsContext>
+        <groupDatasource id="prisonerpropertiesDs"
+                         class="com.company.pmsstart.entity.Prisonerproperty"
+                         view="_local">
+            <query>
+                <![CDATA[select e from pmsstart$Prisonerproperty e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="prisonerpropertiesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="prisonerpropertiesTable"
+                datasource="prisonerpropertiesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="prisonerpropertiesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="natureofproperty"/>
+                <column id="serialnumber"/>
+                <column id="description"/>
+                <column id="remarks"/>
+            </columns>
+            <rows datasource="prisonerpropertiesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="prisonerpropertiesTable.create"/>
+                <button id="editBtn"
+                        action="prisonerpropertiesTable.edit"/>
+                <button id="removeBtn"
+                        action="prisonerpropertiesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

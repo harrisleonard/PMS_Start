@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.pmsstart.web.medicalinformation.MedicalinformationEdit"
+        datasource="medicalinformationDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.pmsstart.web.medicalinformation">
+    <dsContext>
+        <datasource id="medicalinformationDs"
+                    class="com.company.pmsstart.entity.Medicalinformation"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="medicalinformationDs">
+            <column width="250px">
+                <field property="height"/>
+                <field property="temperature"/>
+            </column>
+            <column>
+                <field property="weight"/>
+                <field caption="Blood Pressure"
+                       property="bloodpressure"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

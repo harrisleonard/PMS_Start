@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.pmsstart.web.medicalinformation.MedicalinformationBrowse"
+        focusComponent="medicalinformationsTable"
+        lookupComponent="medicalinformationsTable"
+        messagesPack="com.company.pmsstart.web.medicalinformation">
+    <dsContext>
+        <groupDatasource id="medicalinformationsDs"
+                         class="com.company.pmsstart.entity.Medicalinformation"
+                         view="_local">
+            <query>
+                <![CDATA[select e from pmsstart$Medicalinformation e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="medicalinformationsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="medicalinformationsTable"
+                datasource="medicalinformationsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="medicalinformationsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="height"/>
+                <column id="weight"/>
+                <column id="bloodpressure"/>
+                <column id="temperature"/>
+            </columns>
+            <rows datasource="medicalinformationsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="medicalinformationsTable.create"/>
+                <button id="editBtn"
+                        action="medicalinformationsTable.edit"/>
+                <button id="removeBtn"
+                        action="medicalinformationsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.pmsstart.web.cells.CellsBrowse"
+        focusComponent="cellsesTable"
+        lookupComponent="cellsesTable"
+        messagesPack="com.company.pmsstart.web.cells">
+    <dsContext>
+        <groupDatasource id="cellsesDs"
+                         class="com.company.pmsstart.entity.Cells"
+                         view="_local">
+            <query>
+                <![CDATA[select e from pmsstart$Cells e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="cellsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="cellsesTable"
+                datasource="cellsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="cellsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="block"/>
+                <column id="cellnumber"/>
+            </columns>
+            <rows datasource="cellsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="cellsesTable.create"/>
+                <button id="editBtn"
+                        action="cellsesTable.edit"/>
+                <button id="removeBtn"
+                        action="cellsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.pmsstart.web.nextofkin.NextofkinBrowse"
+        focusComponent="nextofkinsTable"
+        lookupComponent="nextofkinsTable"
+        messagesPack="com.company.pmsstart.web.nextofkin">
+    <dsContext>
+        <groupDatasource id="nextofkinsDs"
+                         class="com.company.pmsstart.entity.Nextofkin"
+                         view="_local">
+            <query>
+                <![CDATA[select e from pmsstart$Nextofkin e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="nextofkinsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="nextofkinsTable"
+                datasource="nextofkinsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="nextofkinsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="nextofkinname"/>
+                <column id="phonenumber"/>
+                <column id="relationship"/>
+            </columns>
+            <rows datasource="nextofkinsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="nextofkinsTable.create"/>
+                <button id="editBtn"
+                        action="nextofkinsTable.edit"/>
+                <button id="removeBtn"
+                        action="nextofkinsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

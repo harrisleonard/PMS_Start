@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.pmsstart.web.sentencedetails.SentencedetailsBrowse"
+        focusComponent="sentencedetailsesTable"
+        lookupComponent="sentencedetailsesTable"
+        messagesPack="com.company.pmsstart.web.sentencedetails">
+    <dsContext>
+        <groupDatasource id="sentencedetailsesDs"
+                         class="com.company.pmsstart.entity.Sentencedetails"
+                         view="_local">
+            <query>
+                <![CDATA[select e from pmsstart$Sentencedetails e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="sentencedetailsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="sentencedetailsesTable"
+                datasource="sentencedetailsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="sentencedetailsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+            </columns>
+            <rows datasource="sentencedetailsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="sentencedetailsesTable.create"/>
+                <button id="editBtn"
+                        action="sentencedetailsesTable.edit"/>
+                <button id="removeBtn"
+                        action="sentencedetailsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

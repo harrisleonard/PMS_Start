@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.pmsstart.web.prisonerdetails.PrisonerdetailsBrowse"
+        focusComponent="prisonerdetailsesTable"
+        lookupComponent="prisonerdetailsesTable"
+        messagesPack="com.company.pmsstart.web.prisonerdetails">
+    <dsContext>
+        <groupDatasource id="prisonerdetailsesDs"
+                         class="com.company.pmsstart.entity.Prisonerdetails"
+                         view="_local">
+            <query>
+                <![CDATA[select e from pmsstart$Prisonerdetails e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="prisonerdetailsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="prisonerdetailsesTable"
+                datasource="prisonerdetailsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="prisonerdetailsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="fullname"/>
+                <column id="gender"/>
+                <column id="county"/>
+                <column id="nationality"/>
+                <column id="employmenttype"/>
+                <column id="constituency"/>
+                <column id="dateofbirth"/>
+                <column id="idnumber_passportnumber"/>
+                <column id="phonenumber"/>
+            </columns>
+            <rows datasource="prisonerdetailsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="prisonerdetailsesTable.create"/>
+                <button id="editBtn"
+                        action="prisonerdetailsesTable.edit"/>
+                <button id="removeBtn"
+                        action="prisonerdetailsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

@@ -1,4 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
-
+    <screen id="pmsstart$Cells.browse"
+            template="com/company/pmsstart/web/cells/cells-browse.xml"/>
+    <screen id="pmsstart$Cells.edit"
+            template="com/company/pmsstart/web/cells/cells-edit.xml"/>
+    <screen id="pmsstart$Foreignaddress.browse"
+            template="com/company/pmsstart/web/foreignaddress/foreignaddress-browse.xml"/>
+    <screen id="pmsstart$Foreignaddress.edit"
+            template="com/company/pmsstart/web/foreignaddress/foreignaddress-edit.xml"/>
+    <screen id="pmsstart$Medicalinformation.browse"
+            template="com/company/pmsstart/web/medicalinformation/medicalinformation-browse.xml"/>
+    <screen id="pmsstart$Medicalinformation.edit"
+            template="com/company/pmsstart/web/medicalinformation/medicalinformation-edit.xml"/>
+    <screen id="pmsstart$Nextofkin.browse"
+            template="com/company/pmsstart/web/nextofkin/nextofkin-browse.xml"/>
+    <screen id="pmsstart$Nextofkin.edit"
+            template="com/company/pmsstart/web/nextofkin/nextofkin-edit.xml"/>
+    <screen id="pmsstart$Prisonerdetails.browse"
+            template="com/company/pmsstart/web/prisonerdetails/prisonerdetails-browse.xml"/>
+    <screen id="pmsstart$Prisonerdetails.edit"
+            template="com/company/pmsstart/web/prisonerdetails/prisonerdetails-edit.xml"/>
+    <screen id="pmsstart$Prisonerproperty.browse"
+            template="com/company/pmsstart/web/prisonerproperty/prisonerproperty-browse.xml"/>
+    <screen id="pmsstart$Prisonerproperty.edit"
+            template="com/company/pmsstart/web/prisonerproperty/prisonerproperty-edit.xml"/>
+    <screen id="pmsstart$Prisonersrelease.browse"
+            template="com/company/pmsstart/web/prisonersrelease/prisonersrelease-browse.xml"/>
+    <screen id="pmsstart$Prisonersrelease.edit"
+            template="com/company/pmsstart/web/prisonersrelease/prisonersrelease-edit.xml"/>
+    <screen id="pmsstart$Sentencedetails.browse"
+            template="com/company/pmsstart/web/sentencedetails/sentencedetails-browse.xml"/>
+    <screen id="pmsstart$Sentencedetails.edit"
+            template="com/company/pmsstart/web/sentencedetails/sentencedetails-edit.xml"/>
+    <screen id="pmsstart$Visitorsinformation.browse"
+            template="com/company/pmsstart/web/visitorsinformation/visitorsinformation-browse.xml"/>
+    <screen id="pmsstart$Visitorsinformation.edit"
+            template="com/company/pmsstart/web/visitorsinformation/visitorsinformation-edit.xml"/>
 </screen-config>
