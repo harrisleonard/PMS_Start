@@ -6,6 +6,9 @@ import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @NamePattern("%s|nextofkinname")
 @Table(name = "PMSSTART_NEXTOFKIN")
@@ -23,6 +26,19 @@ public class Nextofkin extends StandardEntity {
     @NotNull
     @Column(name = "RELATIONSHIP", nullable = false)
     protected String relationship;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PRISONERDETAILS_ID")
+    protected Prisonerdetails prisonerdetails;
+
+    public void setPrisonerdetails(Prisonerdetails prisonerdetails) {
+        this.prisonerdetails = prisonerdetails;
+    }
+
+    public Prisonerdetails getPrisonerdetails() {
+        return prisonerdetails;
+    }
+
 
     public void setNextofkinname(String nextofkinname) {
         this.nextofkinname = nextofkinname;

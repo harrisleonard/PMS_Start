@@ -22,7 +22,7 @@
                        property="telephonenumber"/>
             </column>
             <column>
-                <field caption="Reletionship"
+                <field caption="Relationship"
                        property="relationshipwithinmate"/>
                 <field property="address"/>
             </column>

@@ -8,7 +8,10 @@
     <dsContext>
         <datasource id="prisonerdetailsDs"
                     class="com.company.pmsstart.entity.Prisonerdetails"
-                    view="_local"/>
+                    view="_local">
+            <collectionDatasource id="nextofkinDs"
+                                  property="nextofkin"/>
+        </datasource>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
@@ -39,5 +42,38 @@
         </fieldGroup>
         <frame id="windowActions"
                screen="editWindowActions"/>
+        <tabSheet>
+            <tab id="tab"
+                 caption="msg://Tab"
+                 margin="true,false,false,false"
+                 spacing="true">
+                <table id="nextofkinTable"
+                       height="100px"
+                       width="100%">
+                    <actions>
+                        <action id="create"
+                                caption="create"/>
+                        <action id="edit"
+                                caption="edit"/>
+                        <action id="remove"
+                                caption="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="nextofkinname"/>
+                        <column id="phonenumber"/>
+                        <column id="relationship"/>
+                    </columns>
+                    <rows datasource="nextofkinDs"/>
+                    <buttonsPanel>
+                        <button id="createButton"
+                                action="nextofkinTable.create"/>
+                        <button id="editButton"
+                                action="nextofkinTable.edit"/>
+                        <button id="removeButton"
+                                action="nextofkinTable.remove"/>
+                    </buttonsPanel>
+                </table>
+            </tab>
+        </tabSheet>
     </layout>
 </window>

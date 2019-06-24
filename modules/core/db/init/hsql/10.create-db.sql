@@ -72,6 +72,7 @@ create table PMSSTART_NEXTOFKIN (
     NEXTOFKINNAME varchar(255) not null,
     PHONENUMBER integer,
     RELATIONSHIP varchar(50) not null,
+    PRISONERDETAILS_ID varchar(36),
     --
     primary key (ID)
 )^

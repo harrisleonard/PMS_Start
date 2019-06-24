@@ -14,7 +14,13 @@
           name="nextofkin-view"/>
     <view class="com.company.pmsstart.entity.Prisonerdetails"
           extends="_local"
-          name="prisonerdetails-view"/>
+          name="prisonerdetails-view">
+        <property name="nextofkin"
+                  view="_minimal">
+            <property name="phonenumber"/>
+            <property name="relationship"/>
+        </property>
+    </view>
     <view class="com.company.pmsstart.entity.Prisonerproperty"
           extends="_local"
           name="prisonerproperty-view"/>

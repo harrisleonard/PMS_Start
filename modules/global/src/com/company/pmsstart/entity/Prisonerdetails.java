@@ -9,6 +9,11 @@ import com.haulmont.chile.core.annotations.NamePattern;
 import java.util.Date;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import com.haulmont.chile.core.annotations.Composition;
+import com.haulmont.cuba.core.entity.annotation.OnDelete;
+import com.haulmont.cuba.core.global.DeletePolicy;
+import java.util.List;
+import javax.persistence.OneToMany;
 
 @NamePattern("%s|fullname")
 @Table(name = "PMSSTART_PRISONERDETAILS")
@@ -19,6 +24,11 @@ public class Prisonerdetails extends StandardEntity {
     @NotNull
     @Column(name = "FULLNAME", nullable = false)
     protected String fullname;
+
+    @Composition
+    @OnDelete(DeletePolicy.CASCADE)
+    @OneToMany(mappedBy = "prisonerdetails")
+    protected List<Nextofkin> nextofkin;
 
     @NotNull
     @Column(name = "GENDER", nullable = false)
@@ -52,6 +62,15 @@ public class Prisonerdetails extends StandardEntity {
     @NotNull
     @Column(name = "PHONENUMBER", nullable = false)
     protected Integer phonenumber;
+
+    public void setNextofkin(List<Nextofkin> nextofkin) {
+        this.nextofkin = nextofkin;
+    }
+
+    public List<Nextofkin> getNextofkin() {
+        return nextofkin;
+    }
+
 
     public void setGender(Gender gender) {
         this.gender = gender == null ? null : gender.getId();
