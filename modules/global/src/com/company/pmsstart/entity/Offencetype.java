@@ -6,12 +6,17 @@ import javax.annotation.Nullable;
 
 
 public enum Offencetype implements EnumClass<String> {
-
-    Burglary("Burglary"),
-    Murder("Murder"),
-    Rape("Rape"),
-    Robbery("Robbery"),
-    Others("Others");
+    bankingandinsurancecounterfeitEmbezzlement("bankingandinsurancecounterfeitEmbezzlement"),
+    courtsorcorrections("courtsorcorrections"),
+    drugOffenses("drugOffenses"),
+    extortionfraudbribery("extortionfraudbribery	"),
+    homicideaggravatedassaultandkidnappingoffenses("homicideaggravatedassaultandkidnappingoffenses"),
+    immigration("immigration"),
+    miscellaneous("miscellaneous"),
+    nationalsecurity("nationalsecurity"),
+    sexoffenses("sexoffenses"),
+    weaponsexplosivesarson("weaponsexplosivesarson"),
+    others("others");
 
     private String id;
 

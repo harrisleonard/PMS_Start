@@ -20,6 +20,16 @@
             <property name="phonenumber"/>
             <property name="relationship"/>
         </property>
+        <property name="sentencedetails"
+                  view="_minimal">
+            <property name="sentencelenghth"/>
+            <property name="offencetype"/>
+            <property name="remarks"/>
+        </property>
+        <property name="foreignaddress"
+                  view="_minimal">
+            <property name="town"/>
+        </property>
     </view>
     <view class="com.company.pmsstart.entity.Prisonerproperty"
           extends="_local"

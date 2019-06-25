@@ -12,5 +12,6 @@
         <class>com.company.pmsstart.entity.Cells</class>
         <class>com.company.pmsstart.entity.Foreignaddress</class>
         <class>com.company.pmsstart.entity.Sentencedetails</class>
+        <class>com.company.pmsstart.entity.Biometric</class>
     </persistence-unit>
 </persistence>

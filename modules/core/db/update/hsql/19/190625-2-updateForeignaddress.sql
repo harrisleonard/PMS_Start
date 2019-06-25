@@ -1,0 +1,1 @@
+alter table PMSSTART_FOREIGNADDRESS add column PRISONERDETAILS_ID varchar(36) ;

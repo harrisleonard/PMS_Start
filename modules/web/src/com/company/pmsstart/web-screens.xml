@@ -36,4 +36,8 @@
             template="com/company/pmsstart/web/visitorsinformation/visitorsinformation-browse.xml"/>
     <screen id="pmsstart$Visitorsinformation.edit"
             template="com/company/pmsstart/web/visitorsinformation/visitorsinformation-edit.xml"/>
+    <screen id="pmsstart$Biometric.browse"
+            template="com/company/pmsstart/web/biometric/biometric-browse.xml"/>
+    <screen id="pmsstart$Biometric.edit"
+            template="com/company/pmsstart/web/biometric/biometric-edit.xml"/>
 </screen-config>

@@ -6,6 +6,9 @@ import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @NamePattern("%s|country")
 @Table(name = "PMSSTART_FOREIGNADDRESS")
@@ -20,6 +23,19 @@ public class Foreignaddress extends StandardEntity {
     @NotNull
     @Column(name = "TOWN", nullable = false)
     protected String town;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PRISONERDETAILS_ID")
+    protected Prisonerdetails prisonerdetails;
+
+    public void setPrisonerdetails(Prisonerdetails prisonerdetails) {
+        this.prisonerdetails = prisonerdetails;
+    }
+
+    public Prisonerdetails getPrisonerdetails() {
+        return prisonerdetails;
+    }
+
 
     public void setTown(Town town) {
         this.town = town == null ? null : town.getId();

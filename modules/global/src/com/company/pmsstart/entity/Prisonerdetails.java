@@ -28,7 +28,17 @@ public class Prisonerdetails extends StandardEntity {
     @Composition
     @OnDelete(DeletePolicy.CASCADE)
     @OneToMany(mappedBy = "prisonerdetails")
+    protected List<Foreignaddress> foreignaddress;
+
+    @Composition
+    @OnDelete(DeletePolicy.CASCADE)
+    @OneToMany(mappedBy = "prisonerdetails")
     protected List<Nextofkin> nextofkin;
+
+    @Composition
+    @OnDelete(DeletePolicy.CASCADE)
+    @OneToMany(mappedBy = "prisonerdetails")
+    protected List<Sentencedetails> sentencedetails;
 
     @NotNull
     @Column(name = "GENDER", nullable = false)
@@ -62,6 +72,40 @@ public class Prisonerdetails extends StandardEntity {
     @NotNull
     @Column(name = "PHONENUMBER", nullable = false)
     protected Integer phonenumber;
+
+
+
+    @Composition
+    @OnDelete(DeletePolicy.CASCADE)
+    @OneToMany(mappedBy = "prisonerdetails")
+    protected List<Biometric> biometric;
+
+    public void setBiometric(List<Biometric> biometric) {
+        this.biometric = biometric;
+    }
+
+    public List<Biometric> getBiometric() {
+        return biometric;
+    }
+
+
+    public void setForeignaddress(List<Foreignaddress> foreignaddress) {
+        this.foreignaddress = foreignaddress;
+    }
+
+    public List<Foreignaddress> getForeignaddress() {
+        return foreignaddress;
+    }
+
+
+    public void setSentencedetails(List<Sentencedetails> sentencedetails) {
+        this.sentencedetails = sentencedetails;
+    }
+
+    public List<Sentencedetails> getSentencedetails() {
+        return sentencedetails;
+    }
+
 
     public void setNextofkin(List<Nextofkin> nextofkin) {
         this.nextofkin = nextofkin;

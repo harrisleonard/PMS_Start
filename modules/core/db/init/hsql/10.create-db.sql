@@ -145,6 +145,7 @@ create table PMSSTART_FOREIGNADDRESS (
     --
     COUNTRY varchar(50) not null,
     TOWN varchar(50) not null,
+    PRISONERDETAILS_ID varchar(36),
     --
     primary key (ID)
 )^
@@ -159,6 +160,11 @@ create table PMSSTART_SENTENCEDETAILS (
     UPDATED_BY varchar(50),
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
+    --
+    SENTENCELENGHTH varchar(50) not null,
+    OFFENCETYPE varchar(50) not null,
+    REMARKS longvarchar,
+    PRISONERDETAILS_ID varchar(36),
     --
     primary key (ID)
 )^

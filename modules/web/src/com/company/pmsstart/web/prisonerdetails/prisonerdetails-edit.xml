@@ -11,69 +11,105 @@
                     view="_local">
             <collectionDatasource id="nextofkinDs"
                                   property="nextofkin"/>
+            <collectionDatasource id="foreignaddressDs"
+                                  property="foreignaddress"/>
+            <collectionDatasource id="sentencedetailsDs"
+                                  property="sentencedetails"/>
         </datasource>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="windowActions"
-            spacing="true">
-        <fieldGroup id="fieldGroup"
-                    datasource="prisonerdetailsDs">
-            <column width="250px">
-                <field caption="Full Name"
-                       property="fullname"/>
-                <field property="nationality"/>
-                <field caption="Phone Number"
-                       property="phonenumber"/>
-            </column>
-            <column>
-                <field property="gender"/>
-                <field property="county"/>
-                <field caption="ID Number/Passport Number"
-                       property="idnumber_passportnumber"/>
-            </column>
-            <column>
-                <field caption="Date Of Birth"
-                       property="dateofbirth"/>
-                <field property="constituency"/>
-                <field caption="Employment Type"
-                       property="employmenttype"/>
-            </column>
-        </fieldGroup>
-        <frame id="windowActions"
-               screen="editWindowActions"/>
+    <layout spacing="true">
         <tabSheet>
-            <tab id="tab"
-                 caption="msg://Tab"
+            <tab id="tab_4"
+                 caption="Prisoner Details"
                  margin="true,false,false,false"
                  spacing="true">
-                <table id="nextofkinTable"
-                       height="100px"
-                       width="100%">
-                    <actions>
-                        <action id="create"
-                                caption="create"/>
-                        <action id="edit"
-                                caption="edit"/>
-                        <action id="remove"
-                                caption="remove"/>
-                    </actions>
-                    <columns>
-                        <column id="nextofkinname"/>
-                        <column id="phonenumber"/>
-                        <column id="relationship"/>
-                    </columns>
-                    <rows datasource="nextofkinDs"/>
-                    <buttonsPanel>
-                        <button id="createButton"
-                                action="nextofkinTable.create"/>
-                        <button id="editButton"
-                                action="nextofkinTable.edit"/>
-                        <button id="removeButton"
-                                action="nextofkinTable.remove"/>
-                    </buttonsPanel>
-                </table>
+                <tabSheet>
+                    <tab id="tab_2"
+                         caption="Prisoner Details"
+                         margin="true,false,false,false"
+                         spacing="true">
+                        <fieldGroup id="fieldGroup"
+                                    datasource="prisonerdetailsDs">
+                            <column width="250px">
+                                <field caption="Full Name"
+                                       property="fullname"/>
+                                <field property="nationality"/>
+                                <field caption="Phone Number"
+                                       property="phonenumber"/>
+                            </column>
+                            <column>
+                                <field property="gender"/>
+                                <field property="county"/>
+                                <field caption="ID Number/Passport Number"
+                                       property="idnumber_passportnumber"/>
+                            </column>
+                            <column>
+                                <field caption="Date Of Birth"
+                                       property="dateofbirth"/>
+                                <field property="constituency"/>
+                                <field caption="Employment Type"
+                                       property="employmenttype"/>
+                            </column>
+                        </fieldGroup>
+                    </tab>
+                </tabSheet>
+                <tabSheet>
+                    <tab id="tab_1"
+                         caption="Foreign Address"
+                         margin="true,false,false,false"
+                         spacing="true">
+                        <fieldGroup id="fieldgroup_1"
+                                    datasource="foreignaddressDs">
+                            <column width="250px">
+                                <field property="country"/>
+                            </column>
+                            <column>
+                                <field property="town"/>
+                            </column>
+                        </fieldGroup>
+                    </tab>
+                </tabSheet>
+                <tabSheet>
+                    <tab id="tab"
+                         caption="msg://Tab"
+                         margin="true,false,false,false"
+                         spacing="true">
+                        <fieldGroup id="fieldgroup_2"
+                                    datasource="nextofkinDs">
+                            <column width="250px">
+                                <field property="nextofkinname"/>
+                                <field property="phonenumber"/>
+                            </column>
+                            <column>
+                                <field property="relationship"/>
+                            </column>
+                        </fieldGroup>
+                    </tab>
+                </tabSheet>
+                <frame id="windowActions"
+                       height="100%"
+                       screen="editWindowActions"/>
             </tab>
+            <tab id="tab_3"
+                 caption="Sentence Details"
+                 margin="true,false,false,false"
+                 spacing="true">
+                <tabSheet/>
+                <fieldGroup id="fieldgroup_3"
+                            datasource="sentencedetailsDs">
+                    <column width="250px">
+                        <field property="sentencelenghth"/>
+                        <field property="offencetype"/>
+                        <field property="remarks"/>
+                    </column>
+                </fieldGroup>
+            </tab>
+            <tab id="tab_5"
+                 caption="Biometric"
+                 margin="true,false,false,false"
+                 spacing="true"/>
         </tabSheet>
     </layout>
 </window>

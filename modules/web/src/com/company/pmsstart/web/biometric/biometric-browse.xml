@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         caption="msg://browseCaption"
-        class="com.company.pmsstart.web.sentencedetails.SentencedetailsBrowse"
-        focusComponent="sentencedetailsesTable"
-        lookupComponent="sentencedetailsesTable"
-        messagesPack="com.company.pmsstart.web.sentencedetails">
+        class="com.company.pmsstart.web.biometric.BiometricBrowse"
+        focusComponent="biometricsTable"
+        lookupComponent="biometricsTable"
+        messagesPack="com.company.pmsstart.web.biometric">
     <dsContext>
-        <groupDatasource id="sentencedetailsesDs"
-                         class="com.company.pmsstart.entity.Sentencedetails"
+        <groupDatasource id="biometricsDs"
+                         class="com.company.pmsstart.entity.Biometric"
                          view="_local">
             <query>
-                <![CDATA[select e from pmsstart$Sentencedetails e]]>
+                <![CDATA[select e from pmsstart$Biometric e]]>
             </query>
         </groupDatasource>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="sentencedetailsesTable"
+    <layout expand="biometricsTable"
             spacing="true">
         <filter id="filter"
-                applyTo="sentencedetailsesTable"
-                datasource="sentencedetailsesDs">
+                applyTo="biometricsTable"
+                datasource="biometricsDs">
             <properties include=".*"/>
         </filter>
-        <groupTable id="sentencedetailsesTable"
+        <groupTable id="biometricsTable"
                     width="100%">
             <actions>
                 <action id="create"/>
@@ -31,20 +31,17 @@
                 <action id="remove"/>
             </actions>
             <columns>
-                <column id="sentencelenghth"/>
-                <column id="offencetype"/>
-                <column id="remarks"/>
             </columns>
-            <rows datasource="sentencedetailsesDs"/>
+            <rows datasource="biometricsDs"/>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
                 <button id="createBtn"
-                        action="sentencedetailsesTable.create"/>
+                        action="biometricsTable.create"/>
                 <button id="editBtn"
-                        action="sentencedetailsesTable.edit"/>
+                        action="biometricsTable.edit"/>
                 <button id="removeBtn"
-                        action="sentencedetailsesTable.remove"/>
+                        action="biometricsTable.remove"/>
             </buttonsPanel>
         </groupTable>
     </layout>

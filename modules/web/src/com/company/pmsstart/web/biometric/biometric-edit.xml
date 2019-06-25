@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         caption="msg://editorCaption"
-        class="com.company.pmsstart.web.sentencedetails.SentencedetailsEdit"
-        datasource="sentencedetailsDs"
+        class="com.company.pmsstart.web.biometric.BiometricEdit"
+        datasource="biometricDs"
         focusComponent="fieldGroup"
-        messagesPack="com.company.pmsstart.web.sentencedetails">
+        messagesPack="com.company.pmsstart.web.biometric">
     <dsContext>
-        <datasource id="sentencedetailsDs"
-                    class="com.company.pmsstart.entity.Sentencedetails"
+        <datasource id="biometricDs"
+                    class="com.company.pmsstart.entity.Biometric"
                     view="_local"/>
     </dsContext>
     <dialogMode height="600"
@@ -15,14 +15,8 @@
     <layout expand="windowActions"
             spacing="true">
         <fieldGroup id="fieldGroup"
-                    datasource="sentencedetailsDs">
+                    datasource="biometricDs">
             <column width="250px">
-                <field property="sentencelenghth"/>
-                <field property="remarks"
-                       rows="5"/>
-            </column>
-            <column>
-                <field property="offencetype"/>
             </column>
         </fieldGroup>
         <frame id="windowActions"

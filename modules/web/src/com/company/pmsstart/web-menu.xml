@@ -11,5 +11,6 @@
         <item screen="pmsstart$Prisonersrelease.browse"/>
         <item screen="pmsstart$Sentencedetails.browse"/>
         <item screen="pmsstart$Visitorsinformation.browse"/>
+        <item screen="pmsstart$Biometric.browse"/>
     </menu>
 </menu-config>

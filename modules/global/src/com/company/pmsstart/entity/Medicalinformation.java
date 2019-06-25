@@ -6,6 +6,9 @@ import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @NamePattern("%s|temperature")
 @Table(name = "PMSSTART_MEDICALINFORMATION")
@@ -25,9 +28,23 @@ public class Medicalinformation extends StandardEntity {
     @Column(name = "BLOODPRESSURE", nullable = false)
     protected Integer bloodpressure;
 
-    @NotNull
-    @Column(name = "TEMPERATURE", nullable = false)
+    @Column(name = "TEMPERATURE")
     protected Integer temperature;
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "BIOMETRIC_ID")
+    protected Biometric biometric;
+
+    public void setBiometric(Biometric biometric) {
+        this.biometric = biometric;
+    }
+
+    public Biometric getBiometric() {
+        return biometric;
+    }
+
+
 
     public void setHeight(Integer height) {
         this.height = height;
