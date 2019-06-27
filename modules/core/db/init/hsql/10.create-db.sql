@@ -110,7 +110,8 @@ create table PMSSTART_MEDICALINFORMATION (
     HEIGHT integer not null,
     WEIGHT integer not null,
     BLOODPRESSURE integer not null,
-    TEMPERATURE integer not null,
+    TEMPERATURE integer,
+    BIOMETRIC_ID varchar(36),
     --
     primary key (ID)
 )^
@@ -169,3 +170,19 @@ create table PMSSTART_SENTENCEDETAILS (
     primary key (ID)
 )^
 -- end PMSSTART_SENTENCEDETAILS
+-- begin PMSSTART_BIOMETRIC
+create table PMSSTART_BIOMETRIC (
+    ID varchar(36) not null,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    PRISONERDETAILS_ID varchar(36),
+    --
+    primary key (ID)
+)^
+-- end PMSSTART_BIOMETRIC
